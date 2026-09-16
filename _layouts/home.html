@@ -1,0 +1,79 @@
+---
+layout: default
+---
+<div class="wrap">
+  <header class="masthead">
+    <a class="home-link" href="{{ '/' | relative_url }}">
+      <h1>{{ site.title }}</h1>
+    </a>
+    <div class="edition-strip">
+      <span>Lanzarote</span>
+      <span class="mono">Actualizado: {{ site.time | date: "%d de %B de %Y" }}</span>
+    </div>
+  </header>
+
+  {% assign fichas = site.fichas | sort: "date" | reverse %}
+
+  <section class="feed-section">
+    {% if fichas.size == 0 %}
+      <p class="empty-state">Todavía no hay fichas publicadas. Añade la primera en <code>_fichas/</code>.</p>
+    {% else %}
+      {% assign lead = fichas.first %}
+      {% assign resto = fichas | slice: 1, fichas.size %}
+
+      {% assign kclass = "otro" %}
+      {% if lead.ayuntamiento == "San Bartolomé" %}{% assign kclass = "sb" %}{% endif %}
+      {% if lead.ayuntamiento == "Teguise" %}{% assign kclass = "teg" %}{% endif %}
+
+      <a class="lead-card" href="{{ lead.url | relative_url }}">
+        <div class="lead-grid">
+          <figure class="photo-placeholder" style="margin:0;">
+            <div class="photo-box">
+              {% if lead.foto %}
+                <img src="{{ lead.foto | relative_url }}" alt="{{ lead.foto_descripcion | default: lead.title }}">
+              {% else %}
+                Fotografía ilustrativa<br>{{ lead.foto_descripcion | default: lead.ayuntamiento }}
+              {% endif %}
+            </div>
+            <span class="photo-tag {{ kclass }}">{{ lead.ayuntamiento }}</span>
+          </figure>
+          <div class="lead-body">
+            <p class="kicker {{ kclass }}">{{ lead.ayuntamiento }} <span class="topic">· {{ lead.tema }}</span></p>
+            <h2>{{ lead.title }}</h2>
+            {% if lead.dek %}<p class="dek">{{ lead.dek }}</p>{% endif %}
+            {% if lead.cita %}<blockquote>{{ lead.cita }}</blockquote>{% endif %}
+            <div class="meta-row">
+              <span class="mono" style="color:var(--muted);">{{ lead.date | date: "%d %b %Y" | upcase }}</span>
+              <span class="read-more">Leer ficha completa →</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      {% if resto.size > 0 %}
+      <div class="grid">
+        {% for ficha in resto %}
+          {% assign kclass2 = "otro" %}
+          {% if ficha.ayuntamiento == "San Bartolomé" %}{% assign kclass2 = "sb" %}{% endif %}
+          {% if ficha.ayuntamiento == "Teguise" %}{% assign kclass2 = "teg" %}{% endif %}
+          <a class="card" href="{{ ficha.url | relative_url }}">
+            <div class="photo-box">
+              {% if ficha.foto %}
+                <img src="{{ ficha.foto | relative_url }}" alt="{{ ficha.foto_descripcion | default: ficha.title }}">
+              {% else %}
+                Fotografía ilustrativa<br>{{ ficha.foto_descripcion | default: ficha.ayuntamiento }}
+              {% endif %}
+            </div>
+            <div class="card-body">
+              <p class="kicker {{ kclass2 }}">{{ ficha.ayuntamiento }} <span class="topic">· {{ ficha.tema }}</span></p>
+              <h3>{{ ficha.title }}</h3>
+              {% if ficha.dek %}<p class="dek">{{ ficha.dek }}</p>{% endif %}
+              <span class="date mono">{{ ficha.date | date: "%d %b %Y" | upcase }}</span>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    {% endif %}
+  </section>
+</div>

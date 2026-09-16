@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | absolute_url }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,72,400;0,72,500;0,72,600;0,72,700;0,72,800;1,72,400;1,72,500&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+
+  <div class="sticky-bar">
+    <a class="home-link" href="{{ '/' | relative_url }}">{{ site.title | upcase }}</a>
+  </div>
+
+  {{ content }}
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="mark">{{ site.title }}</p>
+      <p style="margin-top:6px;">
+        Cita y comenta, con atribución, contenido de opinión ya publicado por medios con
+        responsabilidad editorial, al amparo del derecho de cita (art. 32 LPI).
+      </p>
+      <p style="margin-top:6px;">
+        <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+---
+layout: default
+---
+{% assign kclass = "otro" %}
+{% if page.ayuntamiento == "San Bartolomé" %}{% assign kclass = "sb" %}{% endif %}
+{% if page.ayuntamiento == "Teguise" %}{% assign kclass = "teg" %}{% endif %}
+
+<div class="wrap">
+  <article class="ficha">
+    <figure class="ficha-photo photo-placeholder">
+      <div class="photo-box">
+        {% if page.foto %}
+          <img src="{{ page.foto | relative_url }}" alt="{{ page.foto_descripcion | default: page.title }}">
+        {% else %}
+          Fotografía ilustrativa<br>{{ page.foto_descripcion | default: page.ayuntamiento }}
+        {% endif %}
+      </div>
+      <span class="photo-tag {{ kclass }}">{{ page.ayuntamiento }}</span>
+    </figure>
+
+    <div class="ficha-body">
+      <a class="back-link" href="{{ '/' | relative_url }}">← Portada</a>
+      <p class="breadcrumb"><a href="{{ '/' | relative_url }}">Inicio</a> / {{ page.ayuntamiento }} / {{ page.tema }}</p>
+
+      {% if page.expediente %}<span class="expediente">FICHA Nº {{ page.expediente }}</span>{% endif %}
+
+      <h1 class="headline">{{ page.title }}</h1>
+      <p class="byline">
+        Publicado el {{ page.date | date: "%d de %B de %Y" }} ·
+        Ayuntamiento de {{ page.ayuntamiento }} · {{ page.tema }}
+      </p>
+
+      {% if page.cita %}
+      <div class="cita-destacada">
+        <p>{{ page.cita }}</p>
+      </div>
+      <div class="atribucion">
+        <span>
+          Fuente: {{ page.medio_fuente }}
+          {% if page.fecha_fuente %} · {{ page.fecha_fuente | date: "%d de %B de %Y" }}{% endif %}
+          {% if page.enlace_fuente %} · <a href="{{ page.enlace_fuente }}" target="_blank" rel="noopener">Ver artículo original ↗</a>{% endif %}
+        </span>
+      </div>
+      {% endif %}
+
+      <p class="analisis-label">Análisis</p>
+      <div class="analisis">
+        {{ content }}
+      </div>
+
+      <p class="legal-note">
+        Este contenido cita y comenta piezas ya publicadas por medios con responsabilidad
+        editorial, al amparo del derecho de cita (art. 32 LPI). {{ site.title }} no verifica
+        ni publica denuncias de lectores sin que un medio las haya publicado antes.
+      </p>
+    </div>
+  </article>
+</div>
