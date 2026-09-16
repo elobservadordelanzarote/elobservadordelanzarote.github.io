@@ -1,0 +1,41 @@
+title: El Observador de Lanzarote
+description: >-
+  Citas y comenta, con atribución, contenido de opinión ya publicado por medios
+  de comunicación reales sobre la gestión de los ayuntamientos de Lanzarote.
+  Empieza por San Bartolomé y Teguise.
+lang: es
+url: "https://elobservadordelanzarote.github.io"
+baseurl: ""
+
+# --- Colección de fichas de caso ---
+# Cada ficha es un archivo .md dentro de la carpeta _fichas/
+# El nombre de archivo no importa para la web, pero usa siempre AAAA-MM-DD-titulo-corto.md
+collections:
+  fichas:
+    output: true
+    permalink: /:collection/:year/:month/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "fichas"
+    values:
+      layout: "ficha"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# --- Plugins permitidos por GitHub Pages sin configuración extra ---
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  path: feed.xml
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
