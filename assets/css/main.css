@@ -105,9 +105,9 @@ img { max-width: 100%; display: block; }
 
 /* ---- cintilla inferior de contacto ---- */
 .contact-ribbon {
-  background: var(--ink);
+  background: var(--bar-bg);
   padding-block: 26px;
-  border-top: 3px solid var(--accent-strong);
+  border-top: 3px solid rgba(0, 0, 0, 0.18);
 }
 .contact-ribbon .wrap {
   display: flex;
@@ -117,18 +117,17 @@ img { max-width: 100%; display: block; }
   gap: 8px 12px;
   text-align: center;
   font-size: clamp(0.85rem, 2.2vw, 0.95rem);
-  color: var(--paper);
+  color: var(--bar-fg);
 }
 .contact-ribbon a {
-  color: var(--paper);
+  color: var(--bar-fg);
   font-weight: 700;
   font-size: 1.02em;
   text-decoration: underline;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .contact-ribbon { background: #05070a; }
+.contact-ribbon .ribbon-sep {
+  opacity: 0.55;
 }
-:root[data-theme="dark"] .contact-ribbon { background: #05070a; }
 
 .wrap { max-width: 920px; margin: 0 auto; padding-inline: 20px; }
 
