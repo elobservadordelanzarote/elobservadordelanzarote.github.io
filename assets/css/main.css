@@ -143,8 +143,10 @@ img { max-width: 100%; display: block; }
 }
 .main-col { min-width: 0; }
 .side-col { position: static; }
+.side-col-home { padding-top: 28px; }
 @media (max-width: 860px) {
   .page-columns { grid-template-columns: 1fr; max-width: 920px; }
+  .side-col-home { padding-top: 0; }
 }
 
 .side-module {
