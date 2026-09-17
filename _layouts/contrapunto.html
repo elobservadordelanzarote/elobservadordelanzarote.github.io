@@ -1,0 +1,68 @@
+---
+layout: default
+---
+{% assign kclass = "otro" %}
+{% if page.ayuntamiento == "San Bartolomé" %}{% assign kclass = "sb" %}{% endif %}
+{% if page.ayuntamiento == "Teguise" %}{% assign kclass = "teg" %}{% endif %}
+
+<div class="wrap page-columns">
+  <div class="main-col">
+    <article class="ficha">
+      <div class="ficha-body">
+        <a class="back-link" href="{{ '/' | relative_url }}">← Portada</a>
+        <p class="breadcrumb"><a href="{{ '/' | relative_url }}">Inicio</a> / Contrapunto / {{ page.ayuntamiento }}</p>
+
+        <span class="photo-tag tag-inline {{ kclass }}">{{ page.ayuntamiento }}</span>
+
+        <h1 class="headline">{{ page.title }}</h1>
+        <p class="byline">
+          Publicado el {{ page.date | date: "%d de %B de %Y" }} · Ayuntamiento de {{ page.ayuntamiento }}
+        </p>
+
+        {% if page.cita_alcalde %}
+        <p class="contrapunto-label">Dice {{ page.alcalde | default: "el alcalde" }}</p>
+        <div class="cita-destacada">
+          <p>{{ page.cita_alcalde }}</p>
+        </div>
+        <div class="atribucion">
+          <span>
+            Fuente: {{ page.medio_fuente_alcalde }}
+            {% if page.fecha_fuente_alcalde %} · {{ page.fecha_fuente_alcalde | date: "%d de %B de %Y" }}{% endif %}
+            {% if page.enlace_fuente_alcalde %} · <a href="{{ page.enlace_fuente_alcalde }}" target="_blank" rel="noopener">Ver artículo original ↗</a>{% endif %}
+          </span>
+        </div>
+        {% endif %}
+
+        {% if page.cita_ciudadana %}
+        <p class="contrapunto-label ciudadana">Dicen los vecinos</p>
+        <div class="cita-destacada ciudadana">
+          <p>{{ page.cita_ciudadana }}</p>
+        </div>
+        <div class="atribucion">
+          <span>
+            Fuente: {{ page.medio_fuente_ciudadana }}
+            {% if page.fecha_fuente_ciudadana %} · {{ page.fecha_fuente_ciudadana | date: "%d de %B de %Y" }}{% endif %}
+            {% if page.enlace_fuente_ciudadana %} · <a href="{{ page.enlace_fuente_ciudadana }}" target="_blank" rel="noopener">Ver artículo original ↗</a>{% endif %}
+          </span>
+        </div>
+        {% endif %}
+
+        <p class="analisis-label">Análisis</p>
+        <div class="analisis">
+          {{ content }}
+        </div>
+
+        <p class="legal-note">
+          Este contenido cita y comenta piezas ya publicadas por medios con responsabilidad
+          editorial, al amparo del derecho de cita (art. 32 LPI). {{ site.title }} no verifica
+          ni publica denuncias de lectores sin que un medio las haya publicado antes, y no
+          atribuye a nadie ninguna declaración que ese medio no haya publicado ya tal cual.
+        </p>
+      </div>
+    </article>
+  </div>
+
+  <aside class="side-col">
+    {% include contrapunto-sidebar.html %}
+  </aside>
+</div>

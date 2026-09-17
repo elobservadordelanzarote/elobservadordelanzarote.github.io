@@ -11,7 +11,10 @@ layout: default
       <span class="mono">Actualizado: {{ site.time | date: "%d de %B de %Y" }}</span>
     </div>
   </header>
+</div>
 
+<div class="wrap page-columns">
+  <div class="main-col">
   {% assign fichas = site.fichas | sort: "date" | reverse %}
 
   <section class="feed-section">
@@ -76,4 +79,9 @@ layout: default
       {% endif %}
     {% endif %}
   </section>
+  </div>
+
+  <aside class="side-col">
+    {% include contrapunto-sidebar.html %}
+  </aside>
 </div>
