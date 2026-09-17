@@ -74,27 +74,25 @@ img { max-width: 100%; display: block; }
   top: env(safe-area-inset-top, 0px);
   z-index: 10;
   background: var(--bar-bg);
-  padding: 16px 20px 18px;
+  padding-block: 3px;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.18);
 }
 .sticky-bar-inner {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.sticky-bar a.home-link {
-  font-family: "Newsreader", serif;
-  font-weight: 700;
-  font-size: 1.15rem;
-  color: var(--bar-fg);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 30px;
+  padding-block: 14px;
   text-decoration: none;
 }
 .sticky-bar .tagline {
   font-family: "Public Sans", sans-serif;
-  font-weight: 500;
-  font-size: 0.78rem;
+  font-weight: 600;
+  font-size: clamp(0.86rem, 2.4vw, 1.02rem);
   color: var(--bar-fg);
-  opacity: 0.82;
   letter-spacing: 0.01em;
+  line-height: 1.35;
 }
 .sticky-bar span.date {
   font-family: "IBM Plex Mono", monospace;
@@ -108,20 +106,23 @@ img { max-width: 100%; display: block; }
 /* ---- cintilla inferior de contacto ---- */
 .contact-ribbon {
   background: var(--ink);
-  padding: 14px 20px;
+  padding-block: 26px;
+  border-top: 3px solid var(--accent-strong);
 }
 .contact-ribbon .wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 6px 10px;
+  align-items: baseline;
+  gap: 8px 12px;
   text-align: center;
-  font-size: 0.8rem;
+  font-size: clamp(0.85rem, 2.2vw, 0.95rem);
   color: var(--paper);
 }
 .contact-ribbon a {
   color: var(--paper);
   font-weight: 700;
+  font-size: 1.02em;
   text-decoration: underline;
 }
 @media (prefers-color-scheme: dark) {
