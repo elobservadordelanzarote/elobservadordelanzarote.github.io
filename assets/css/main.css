@@ -131,6 +131,73 @@ img { max-width: 100%; display: block; }
 
 .wrap { max-width: 920px; margin: 0 auto; padding-inline: 20px; }
 
+/* ---- columnas de portada / detalle de contrapunto ---- */
+.page-columns {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-inline: 20px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 36px;
+  align-items: start;
+}
+.main-col { min-width: 0; }
+.side-col { position: sticky; top: 40px; }
+@media (max-width: 860px) {
+  .page-columns { grid-template-columns: 1fr; max-width: 920px; }
+  .side-col { position: static; }
+}
+
+.side-module {
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+.side-module-title {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+}
+.side-empty { font-size: 0.84rem; color: var(--muted); line-height: 1.55; }
+.side-feature {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--rule);
+}
+.side-feature-tag {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+}
+.side-feature h4 { margin-top: 6px; font-size: 1.02rem; font-weight: 700; line-height: 1.32; }
+.side-feature p { margin-top: 6px; font-size: 0.82rem; color: var(--muted); }
+.side-feature-date { display: block; margin-top: 8px; font-size: 0.65rem; color: var(--muted); }
+.side-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.side-list li a { display: block; font-size: 0.82rem; text-decoration: none; color: inherit; line-height: 1.4; }
+.side-list li a:hover { color: var(--accent); }
+.side-list-tag {
+  display: inline-block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-right: 6px;
+}
+
 /* ---- hero / masthead ---- */
 .masthead { padding-block: 30px 0; text-align: center; }
 .masthead a.home-link { text-decoration: none; color: inherit; display: block; }
@@ -322,6 +389,17 @@ figure.photo-placeholder { margin: 0; position: relative; }
   border-radius: 0 8px 8px 0;
 }
 .cita-destacada p { font-family: "Newsreader", serif; font-style: italic; font-size: 1.28rem; line-height: 1.5; }
+.cita-destacada.ciudadana { border-left-color: var(--ember); background: var(--ember-soft); }
+.contrapunto-label {
+  margin-top: 26px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.contrapunto-label.ciudadana { color: var(--ember); }
+.tag-inline { position: static; display: inline-block; margin-top: 14px; }
 .atribucion {
   margin-top: 12px;
   padding: 10px 14px;
