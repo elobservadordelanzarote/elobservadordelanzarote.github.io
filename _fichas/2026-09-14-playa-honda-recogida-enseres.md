@@ -9,8 +9,8 @@ cita: "«El servicio de recogida de voluminosos no ha pasado por esta calle desd
 medio_fuente: "Medio de ejemplo"
 fecha_fuente: 2026-09-12
 enlace_fuente: "#"
-foto_descripcion: "Playa Honda, San Bartolomé"
-# foto: /assets/images/playa-honda-residuos.jpg   # descomenta y sube la foto real cuando la tengas
+foto_descripcion: "Mobiliario y enseres acumulados en la vía pública (foto ilustrativa de banco gratuito, no del hecho concreto)"
+foto: /assets/images/playa-honda-residuos.jpg
 ---
 Si el aviso lleva semanas repitiéndose en distintos puntos de Playa Honda, cabe preguntarse si el
 problema es puntual o si refleja una capacidad de recogida por debajo de lo que la zona necesita en
