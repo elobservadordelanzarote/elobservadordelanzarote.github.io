@@ -7,7 +7,7 @@ lang: es
 
 # Línea que aparece en la cintilla superior (sustituye al nombre, que ya está
 # grande en la cabecera). Cámbiala cuando quieras, es solo texto.
-tagline: "Tribuna ciudadana: aquí se muestran las opiniones de los vecinos sobre sus ayuntamientos y gestores"
+tagline: "Tribuna ciudadana donde se muestran las opiniones de los vecinos"
 
 # Correo de contacto que se muestra en la cintilla inferior para que los
 # lectores puedan enviar avisos o noticias. Déjalo vacío para ocultar la cintilla.
