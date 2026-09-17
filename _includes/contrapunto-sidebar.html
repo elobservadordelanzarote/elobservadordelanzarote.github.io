@@ -1,0 +1,41 @@
+{% assign items = site.contrapunto | sort: "date" | reverse %}
+{% if page.collection == "contrapunto" %}
+  {% assign items = items | where_exp: "item", "item.url != page.url" %}
+{% endif %}
+
+<div class="side-module">
+  <p class="side-module-title">Contrapunto</p>
+
+  {% if items.size == 0 %}
+    <p class="side-empty">
+      Todavía no hay ninguna pieza publicada aquí. Esta columna mostrará, cuando el alcalde
+      de San Bartolomé o de Teguise publique una columna de opinión en un medio real, su cita
+      junto con la reacción ciudadana ya publicada sobre el mismo asunto.
+    </p>
+  {% else %}
+    {% unless page.collection == "contrapunto" %}
+      {% assign featured = items.first %}
+      {% assign rest = items | slice: 1, items.size %}
+      <a class="side-feature" href="{{ featured.url | relative_url }}">
+        <span class="side-feature-tag">{{ featured.ayuntamiento }}</span>
+        <h4>{{ featured.title }}</h4>
+        {% if featured.dek %}<p>{{ featured.dek }}</p>{% endif %}
+        <span class="side-feature-date mono">{{ featured.date | date: "%d %b %Y" | upcase }}</span>
+      </a>
+    {% else %}
+      {% assign rest = items %}
+    {% endunless %}
+
+    {% if rest.size > 0 %}
+    <ul class="side-list">
+      {% for item in rest %}
+      <li>
+        <a href="{{ item.url | relative_url }}">
+          <span class="side-list-tag">{{ item.ayuntamiento }}</span>{{ item.title }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  {% endif %}
+</div>
