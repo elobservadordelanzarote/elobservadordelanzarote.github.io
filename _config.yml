@@ -4,6 +4,15 @@ description: >-
   de comunicación reales sobre la gestión de los ayuntamientos de Lanzarote.
   Empieza por San Bartolomé y Teguise.
 lang: es
+
+# Línea corta que aparece junto al nombre en la cabecera (opcional).
+# Déjala vacía ("") si no quieres ninguna. Rafa: elige una de las 10 propuestas
+# y pégala aquí entre comillas.
+tagline: ""
+
+# Correo de contacto que se muestra en la cintilla inferior para que los
+# lectores puedan enviar avisos o noticias. Déjalo vacío para ocultar la cintilla.
+contact_email: "elobservatoriodelanzarote@gmail.com"
 url: "https://elobservadordelanzarote.github.io"
 baseurl: ""
 
