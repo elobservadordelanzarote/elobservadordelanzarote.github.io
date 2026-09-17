@@ -18,8 +18,14 @@ baseurl: ""
 # --- Colección de fichas de caso ---
 # Cada ficha es un archivo .md dentro de la carpeta _fichas/
 # El nombre de archivo no importa para la web, pero usa siempre AAAA-MM-DD-titulo-corto.md
+#
+# --- Colección "Contrapunto" (columna derecha: opinión del alcalde + reacción
+# ciudadana ya publicadas) --- Cada entrada es un archivo .md en _contrapunto/
 collections:
   fichas:
+    output: true
+    permalink: /:collection/:year/:month/:title/
+  contrapunto:
     output: true
     permalink: /:collection/:year/:month/:title/
 
@@ -29,6 +35,11 @@ defaults:
       type: "fichas"
     values:
       layout: "ficha"
+  - scope:
+      path: ""
+      type: "contrapunto"
+    values:
+      layout: "contrapunto"
   - scope:
       path: ""
     values:

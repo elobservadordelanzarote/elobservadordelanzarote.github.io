@@ -45,6 +45,29 @@ generada por IA, nunca del hecho concreto):
    (ej. `playa-honda-residuos.jpg`).
 2. En la ficha, descomenta la línea `foto:` y pon `/assets/images/nombre.jpg`.
 
+## Columna "Contrapunto" (opinión del alcalde + reacción ciudadana)
+
+Aparece a la derecha de la portada y tiene su propia página ampliada al hacer
+clic. Muestra, una junto a la otra, una cita de una columna de opinión real
+publicada por un alcalde y una cita de la reacción ciudadana ya publicada
+sobre ese mismo asunto — con tu análisis debajo. Es el mismo modelo de
+derecho de cita que las fichas normales, pero con dos fuentes en vez de una.
+
+Para añadir una pieza nueva:
+
+1. Copia `_contrapunto/PLANTILLA-no-publicar.md` con un nombre nuevo
+   (`AAAA-MM-DD-titulo-corto.md`), dentro de la carpeta `_contrapunto/`.
+2. Rellena los corchetes `[...]` con datos reales. Las dos citas
+   (`cita_alcalde` y `cita_ciudadana`) tienen que ser literales y venir de
+   algo que un medio real ya haya publicado — nunca las inventes, ni siquiera
+   como borrador. Si todavía no tienes las dos fuentes reales, deja el
+   archivo tal cual, con `published: false`, hasta que las tengas.
+3. Cuando esté todo listo, quita la línea `published: false` (o cámbiala a
+   `published: true`) y sube el archivo a GitHub como cualquier otro cambio.
+
+Mientras no haya ninguna pieza publicada, la columna de la derecha muestra
+un aviso en lugar de quedar vacía o inventarse contenido.
+
 ## Identidad separada de este proyecto
 
 Este sitio vive en una cuenta de GitHub dedicada y separada de tus cuentas
