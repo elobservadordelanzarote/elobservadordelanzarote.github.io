@@ -13,10 +13,9 @@
 <body>
 
   <div class="sticky-bar">
-    <div class="wrap sticky-bar-inner">
-      <a class="home-link" href="{{ '/' | relative_url }}">{{ site.title | upcase }}</a>
-      {% if site.tagline %}<span class="tagline">{{ site.tagline }}</span>{% endif %}
-    </div>
+    <a class="wrap sticky-bar-inner" href="{{ '/' | relative_url }}" title="{{ site.title }} · Volver a portada">
+      <span class="tagline">{{ site.tagline | default: site.title }}</span>
+    </a>
   </div>
 
   {{ content }}
@@ -37,7 +36,7 @@
   {% if site.contact_email %}
   <div class="contact-ribbon">
     <div class="wrap">
-      <span>¿Tienes información sobre la gestión de tu ayuntamiento? Escríbenos:</span>
+      <span>Si quieres hacer pública tu opinión, puedes contactar con:</span>
       <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>
     </div>
   </div>
