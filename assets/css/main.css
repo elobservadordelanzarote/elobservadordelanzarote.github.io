@@ -74,18 +74,27 @@ img { max-width: 100%; display: block; }
   top: env(safe-area-inset-top, 0px);
   z-index: 10;
   background: var(--bar-bg);
-  padding: 12px 20px;
+  padding: 16px 20px 18px;
+}
+.sticky-bar-inner {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  gap: 4px;
 }
 .sticky-bar a.home-link {
   font-family: "Newsreader", serif;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.15rem;
   color: var(--bar-fg);
   text-decoration: none;
+}
+.sticky-bar .tagline {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 500;
+  font-size: 0.78rem;
+  color: var(--bar-fg);
+  opacity: 0.82;
+  letter-spacing: 0.01em;
 }
 .sticky-bar span.date {
   font-family: "IBM Plex Mono", monospace;
@@ -95,6 +104,30 @@ img { max-width: 100%; display: block; }
   text-transform: uppercase;
   white-space: nowrap;
 }
+
+/* ---- cintilla inferior de contacto ---- */
+.contact-ribbon {
+  background: var(--ink);
+  padding: 14px 20px;
+}
+.contact-ribbon .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 10px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--paper);
+}
+.contact-ribbon a {
+  color: var(--paper);
+  font-weight: 700;
+  text-decoration: underline;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .contact-ribbon { background: #05070a; }
+}
+:root[data-theme="dark"] .contact-ribbon { background: #05070a; }
 
 .wrap { max-width: 920px; margin: 0 auto; padding-inline: 20px; }
 
