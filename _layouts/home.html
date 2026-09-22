@@ -33,7 +33,11 @@ layout: default
           <figure class="photo-placeholder" style="margin:0;">
             <div class="photo-box">
               {% if lead.foto %}
+                {% if lead.foto contains '://' %}
+                <img src="{{ lead.foto }}" alt="{{ lead.foto_descripcion | default: lead.title }}">
+                {% else %}
                 <img src="{{ lead.foto | relative_url }}" alt="{{ lead.foto_descripcion | default: lead.title }}">
+                {% endif %}
               {% else %}
                 Fotografía ilustrativa<br>{{ lead.foto_descripcion | default: lead.ayuntamiento }}
               {% endif %}
@@ -62,7 +66,11 @@ layout: default
           <a class="card" href="{{ ficha.url | relative_url }}">
             <div class="photo-box">
               {% if ficha.foto %}
+                {% if ficha.foto contains '://' %}
+                <img src="{{ ficha.foto }}" alt="{{ ficha.foto_descripcion | default: ficha.title }}">
+                {% else %}
                 <img src="{{ ficha.foto | relative_url }}" alt="{{ ficha.foto_descripcion | default: ficha.title }}">
+                {% endif %}
               {% else %}
                 Fotografía ilustrativa<br>{{ ficha.foto_descripcion | default: ficha.ayuntamiento }}
               {% endif %}

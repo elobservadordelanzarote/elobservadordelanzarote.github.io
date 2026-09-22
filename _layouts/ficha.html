@@ -10,7 +10,11 @@ layout: default
     <figure class="ficha-photo photo-placeholder">
       <div class="photo-box">
         {% if page.foto %}
+          {% if page.foto contains '://' %}
+          <img src="{{ page.foto }}" alt="{{ page.foto_descripcion | default: page.title }}">
+          {% else %}
           <img src="{{ page.foto | relative_url }}" alt="{{ page.foto_descripcion | default: page.title }}">
+          {% endif %}
         {% else %}
           Fotografía ilustrativa<br>{{ page.foto_descripcion | default: page.ayuntamiento }}
         {% endif %}
