@@ -7,6 +7,28 @@
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | absolute_url }}">
+
+  {% assign og_title = page.title | default: site.title %}
+  {% assign og_desc = page.dek | default: page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 200 %}
+  {% if page.foto %}
+    {% if page.foto contains '://' %}
+      {% assign og_image = page.foto %}
+    {% else %}
+      {% assign og_image = page.foto | absolute_url %}
+    {% endif %}
+  {% endif %}
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{ og_title }}">
+  <meta property="og:description" content="{{ og_desc }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  {% if og_image %}<meta property="og:image" content="{{ og_image }}">{% endif %}
+
+  <meta name="twitter:card" content="{% if og_image %}summary_large_image{% else %}summary{% endif %}">
+  <meta name="twitter:title" content="{{ og_title }}">
+  <meta name="twitter:description" content="{{ og_desc }}">
+  {% if og_image %}<meta name="twitter:image" content="{{ og_image }}">{% endif %}
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,72,400;0,72,500;0,72,600;0,72,700;0,72,800;1,72,400;1,72,500&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
