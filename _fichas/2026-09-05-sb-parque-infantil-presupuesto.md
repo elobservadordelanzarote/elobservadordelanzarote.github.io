@@ -10,7 +10,7 @@ medio_fuente: "Medio de ejemplo"
 fecha_fuente: 2026-09-02
 enlace_fuente: "#"
 foto_descripcion: "Parque infantil, San Bartolomé (foto ilustrativa de banco gratuito, no del hecho concreto)"
-# foto: /assets/images/nombre.jpg   # descomenta y sube la foto real cuando la tengas
+foto: /assets/images/sb-parque-infantil.jpg
 ---
 Una partida presupuestaria aprobada y sin ejecutar plantea una pregunta sencilla: ¿el retraso es de
 tramitación administrativa, o la prioridad simplemente ha cambiado sin que nadie lo haya explicado

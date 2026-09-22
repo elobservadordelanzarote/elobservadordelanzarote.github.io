@@ -10,7 +10,7 @@ medio_fuente: "Medio de ejemplo"
 fecha_fuente: 2026-09-08
 enlace_fuente: "#"
 foto_descripcion: "Casco histórico de Teguise (foto ilustrativa de banco gratuito, no del hecho concreto)"
-# foto: /assets/images/nombre.jpg   # descomenta y sube la foto real cuando la tengas
+foto: /assets/images/teguise-casco-historico.jpg
 ---
 Cuando varias licencias distintas se atascan en la misma fase durante meses, la pregunta no es solo
 qué ha pasado con cada expediente, sino si el área tiene los medios para tramitarlos al ritmo que
