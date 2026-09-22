@@ -16,12 +16,14 @@
     {% unless page.collection == "contrapunto" %}
       {% assign featured = items.first %}
       {% assign rest = items | slice: 1, items.size %}
-      <a class="side-feature" href="{{ featured.url | relative_url }}">
+      <div class="side-feature-full">
         <span class="side-feature-tag">{{ featured.ayuntamiento }}</span>
-        <h4>{{ featured.title }}</h4>
-        {% if featured.dek %}<p>{{ featured.dek }}</p>{% endif %}
+        <h4><a href="{{ featured.url | relative_url }}">{{ featured.title }}</a></h4>
+        <div class="side-feature-body">
+          {{ featured.content }}
+        </div>
         <span class="side-feature-date mono">{{ featured.date | date: "%d %b %Y" | upcase }}</span>
-      </a>
+      </div>
     {% else %}
       {% assign rest = items %}
     {% endunless %}
