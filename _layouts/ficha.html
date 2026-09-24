@@ -5,6 +5,28 @@ layout: default
 {% if page.ayuntamiento == "San Bartolomé" %}{% assign kclass = "sb" %}{% endif %}
 {% if page.ayuntamiento == "Teguise" %}{% assign kclass = "teg" %}{% endif %}
 
+{% if page.foto %}{% if page.foto contains '://' %}{% assign jsonld_image = page.foto %}{% else %}{% assign jsonld_image = page.foto | absolute_url %}{% endif %}{% endif %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page.dek | default: page.excerpt | strip_html | strip_newlines | truncate: 300 | jsonify }},
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  {% if jsonld_image %}"image": [{{ jsonld_image | jsonify }}],{% endif %}
+  "url": "{{ page.url | absolute_url }}",
+  "inLanguage": "es",
+  "author": { "@type": "Organization", "name": "{{ site.title }}" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+    "logo": { "@type": "ImageObject", "url": "{{ '/assets/icons/icon-512.png' | absolute_url }}" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ page.url | absolute_url }}" },
+  "about": "Ayuntamiento de {{ page.ayuntamiento }}"
+}
+</script>
+
 <div class="wrap">
   <article class="ficha">
     <figure class="ficha-photo photo-placeholder">
@@ -57,6 +79,18 @@ layout: default
         editorial, al amparo del derecho de cita (art. 32 LPI). {{ site.title }} no verifica
         ni publica denuncias de lectores sin que un medio las haya publicado antes.
       </p>
+
+      {% assign relacionadas = site.fichas | where: "ayuntamiento", page.ayuntamiento | where_exp: "f", "f.url != page.url" | sort: "date" | reverse %}
+      {% if relacionadas.size > 0 %}
+      <div class="relacionadas">
+        <p class="analisis-label">Más denuncias sobre {{ page.ayuntamiento }}</p>
+        <ul>
+          {% for r in relacionadas %}
+          <li><a href="{{ r.url | relative_url }}">{{ r.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
     </div>
   </article>
 </div>

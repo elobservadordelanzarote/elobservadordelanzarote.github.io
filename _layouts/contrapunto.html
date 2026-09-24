@@ -5,6 +5,25 @@ layout: default
 {% if page.ayuntamiento == "San Bartolomé" %}{% assign kclass = "sb" %}{% endif %}
 {% if page.ayuntamiento == "Teguise" %}{% assign kclass = "teg" %}{% endif %}
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "OpinionNewsArticle",
+  "headline": {{ page.title | jsonify }},
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "url": "{{ page.url | absolute_url }}",
+  "inLanguage": "es",
+  "author": { "@type": "Organization", "name": "{{ site.title }}" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+    "logo": { "@type": "ImageObject", "url": "{{ '/assets/icons/icon-512.png' | absolute_url }}" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ page.url | absolute_url }}" },
+  "about": "Ayuntamiento de {{ page.ayuntamiento }}"
+}
+</script>
+
 <div class="wrap page-columns">
   <div class="main-col">
     <article class="ficha">
