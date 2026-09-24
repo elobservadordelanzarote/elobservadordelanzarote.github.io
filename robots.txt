@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml
+Sitemap: https://elobservadordelanzarote.github.io/sitemap.xml
