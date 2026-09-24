@@ -430,6 +430,13 @@ figure.photo-placeholder { margin: 0; position: relative; }
 .analisis p { margin-top: 14px; font-size: 1rem; line-height: 1.65; max-width: 62ch; }
 .legal-note { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 0.75rem; color: var(--muted); line-height: 1.6; }
 
+.relacionadas { margin-top: 30px; }
+.relacionadas ul { list-style: none; margin-top: 8px; display: flex; flex-direction: column; gap: 8px; }
+.relacionadas li { padding-left: 14px; position: relative; }
+.relacionadas li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
+.relacionadas a { color: var(--accent); text-decoration: none; font-size: 0.92rem; line-height: 1.4; }
+.relacionadas a:hover { text-decoration: underline; }
+
 footer.site-footer { padding-block: 32px 56px; text-align: center; font-size: 0.75rem; color: var(--muted); }
 footer.site-footer .mark { font-family: "Newsreader", serif; font-weight: 700; color: var(--ink); font-size: 1rem; }
 footer.site-footer a { color: var(--accent); text-decoration: none; }
