@@ -3,7 +3,7 @@ title: "Vecinos alertan de que el parque Simón Bolívar de Arrecife se ha conve
 date: 2026-10-06
 ayuntamiento: "Arrecife"
 tema: "Seguridad"
-expediente: "010"
+expediente: "013"
 dek: "Vecinos de la zona describen una acumulación constante de basura y botellas, consumo de alcohol y drogas, y personas orinando en la vía pública, en un entorno que aseguran lleva años abandonado."
 cita: "«La sensación que tenemos los vecinos es de abandono absoluto.»"
 medio_fuente: "La Voz de Lanzarote (Tu Voz)"
