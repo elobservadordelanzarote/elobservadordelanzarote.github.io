@@ -64,8 +64,9 @@ a { color: inherit; }
 img { max-width: 100%; display: block; }
 .mono { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
 
-/* ---- texto justificado (titulares y cuerpo), excepto el título del periódico ---- */
-h2, h3, h4, p, blockquote, li, .atribucion span { text-align: justify; }
+/* ---- texto de cuerpo justificado (los titulares se dejan sin justificar: con pocas
+   palabras por línea el justificado genera huecos feos) ---- */
+p, blockquote, li, .atribucion span { text-align: justify; }
 .masthead h1, .mark { text-align: center; }
 
 @media (prefers-reduced-motion: reduce) {
