@@ -1,0 +1,41 @@
+---
+layout: default
+title: Opinión
+permalink: /opinion/
+---
+<div class="wrap">
+<header class="masthead" style="padding-block:30px 0;">
+<a class="home-link" href="{{ '/' | relative_url }}">
+<h1 style="font-size:clamp(1.8rem,6.5vw,2.6rem);">Opinión</h1>
+</a>
+<div class="edition-strip">
+<span>Contrapunto</span>
+<span class="mono">Columnas de alcaldes y reacción ciudadana ya publicadas</span>
+</div>
+</header>
+</div>
+
+<div class="wrap">
+<section class="feed-section">
+{% assign items = site.contrapunto | sort: "date" | reverse %}
+{% if items.size == 0 %}
+<p class="empty-state">Todavía no hay piezas de Contrapunto publicadas.</p>
+{% else %}
+<div class="grid">
+{% for item in items %}
+{% assign kclass = "otro" %}
+{% if item.ayuntamiento == "San Bartolomé" %}{% assign kclass = "sb" %}{% endif %}
+{% if item.ayuntamiento == "Teguise" %}{% assign kclass = "teg" %}{% endif %}
+<a class="card" href="{{ item.url | relative_url }}">
+<div class="card-body">
+<p class="kicker {{ kclass }}">{{ item.ayuntamiento }} <span class="topic">· Contrapunto</span></p>
+<h3>{{ item.title }}</h3>
+<p class="dek">{{ item.excerpt | strip_html | truncatewords: 32 }}</p>
+<span class="date mono">{{ item.date | date: "%d %b %Y" | upcase }}</span>
+</div>
+</a>
+{% endfor %}
+</div>
+{% endif %}
+</section>
+</div>
