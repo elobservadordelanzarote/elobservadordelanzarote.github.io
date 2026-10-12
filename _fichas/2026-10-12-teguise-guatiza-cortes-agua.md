@@ -3,7 +3,7 @@ title: "Un vecino de Guatiza denuncia el empeoramiento de los cortes de agua: «
 date: 2026-10-12
 ayuntamiento: "Teguise"
 tema: "Agua"
-expediente: "009"
+expediente: "014"
 dek: "Un residente de Guatiza relata en una carta a La Voz de Lanzarote que los cortes de suministro se han agravado en las últimas semanas y acusa al Consorcio de Aguas de no considerarlos un problema real."
 cita: "«Para el Consorcio y sus amigos, estos no son problemas reales.»"
 medio_fuente: "La Voz de Lanzarote (Tu Voz)"
