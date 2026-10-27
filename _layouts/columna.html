@@ -1,0 +1,46 @@
+---
+layout: default
+---
+<div class="wrap page-columns">
+  <div class="main-col">
+    <article class="ficha">
+      <div class="ficha-body">
+        <a class="back-link" href="{{ '/' | relative_url }}">← Portada</a>
+        <p class="breadcrumb"><a href="{{ '/' | relative_url }}">Inicio</a> / Columna</p>
+
+        <span class="photo-tag tag-inline otro">Columna</span>
+
+        <h1 class="headline">{{ page.title }}</h1>
+        <p class="byline">
+          Publicado el {{ page.date | date: "%d de %B de %Y" }} · El Observador de Lanzarote
+        </p>
+
+        <div class="analisis">
+          {{ content }}
+        </div>
+
+        {% if page.fuentes %}
+        <div class="relacionadas">
+          <p class="analisis-label">Fuentes citadas</p>
+          <ul>
+          {% for f in page.fuentes %}
+            <li><a href="{{ f.enlace }}" target="_blank" rel="noopener">{{ f.medio }}{% if f.fecha %} · {{ f.fecha | date: "%d de %B de %Y" }}{% endif %}</a></li>
+          {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+
+        <p class="legal-note">
+          Este contenido cita y comenta piezas ya publicadas por medios con responsabilidad
+          editorial, al amparo del derecho de cita (art. 32 LPI). {{ site.title }} no verifica
+          ni publica denuncias de lectores sin que un medio las haya publicado antes, y no
+          atribuye a nadie ninguna declaración que ese medio no haya publicado ya tal cual.
+        </p>
+      </div>
+    </article>
+  </div>
+
+  <aside class="side-col">
+    {% include contrapunto-sidebar.html %}
+  </aside>
+</div>
