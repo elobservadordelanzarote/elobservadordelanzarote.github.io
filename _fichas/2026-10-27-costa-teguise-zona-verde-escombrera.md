@@ -10,7 +10,7 @@ medio_fuente: "La Voz de Lanzarote (Tu Voz)"
 fecha_fuente: 2026-10-13
 enlace_fuente: "https://www.lavozdelanzarote.com/tu-voz/vecinos-costa-teguise-denuncian-obra-esta-convirtiendo-zona-verde-en-escombrera_246631_102.html"
 foto_descripcion: "Zona verde urbana con escombros de obra (foto ilustrativa de banco gratuito, no del hecho concreto)"
-# foto: /assets/images/nombre.jpg
+foto: "https://images.pexels.com/photos/11849101/pexels-photo-11849101.jpeg?auto=compress&cs=tinysrgb&w=1200"
 ---
 Un grupo de vecinos de Costa Teguise denuncia que camiones de la empresa encargada de una obra
 cercana descargan de forma repetida grandes cantidades de escombros sobre las zonas verdes entre las
