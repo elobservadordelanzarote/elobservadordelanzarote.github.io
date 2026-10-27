@@ -39,3 +39,24 @@ permalink: /opinion/
 {% endif %}
 </section>
 </div>
+
+{% assign columnas = site.columnas | sort: "date" | reverse %}
+{% if columnas.size > 0 %}
+<div class="wrap">
+<section class="feed-section">
+<p class="side-module-title" style="margin-bottom:4px;">Columnas</p>
+<div class="grid">
+{% for item in columnas %}
+<a class="card" href="{{ item.url | relative_url }}">
+<div class="card-body">
+<p class="kicker otro">El Observador <span class="topic">· Columna</span></p>
+<h3>{{ item.title }}</h3>
+<p class="dek">{{ item.dek | default: item.excerpt | strip_html | truncatewords: 32 }}</p>
+<span class="date mono">{{ item.date | date: "%d %b %Y" | upcase }}</span>
+</div>
+</a>
+{% endfor %}
+</div>
+</section>
+</div>
+{% endif %}

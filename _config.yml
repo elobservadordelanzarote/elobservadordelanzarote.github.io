@@ -20,11 +20,18 @@ baseurl: ""
 #
 # --- Colección "Contrapunto" (columna derecha: opinión del alcalde + reacción
 # ciudadana ya publicadas) --- Cada entrada es un archivo .md en _contrapunto/
+#
+# --- Colección "Columnas" (opinión propia de El Observador, no atada a una
+# cita concreta de un vecino ni a una columna concreta de un alcalde) ---
+# Cada entrada es un archivo .md en _columnas/
 collections:
   fichas:
     output: true
     permalink: /:collection/:year/:month/:title/
   contrapunto:
+    output: true
+    permalink: /:collection/:year/:month/:title/
+  columnas:
     output: true
     permalink: /:collection/:year/:month/:title/
 
@@ -39,6 +46,11 @@ defaults:
       type: "contrapunto"
     values:
       layout: "contrapunto"
+  - scope:
+      path: ""
+      type: "columnas"
+    values:
+      layout: "columna"
   - scope:
       path: ""
     values:
